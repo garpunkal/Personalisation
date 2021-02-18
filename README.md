@@ -5,6 +5,15 @@ It works based on tags on pages and content and stores these against members eff
 
 Upon a repeat visit, the code pulls the member's persona from the database and back into session for efficent access. It then displays personalised content appropriately. 
 
+# Nuget
+
+`Install-Package CarbonSixDigital.Personalisation.Core`
+
+There is a new website project in the solution with an example of how to use the nuget package. 
+
+- Important, remember to change the global.asax to use the Personalisation.Core.Global to upsert to database on session end. 
+
+
 # Screenshots
 
 ## Homepage
@@ -35,6 +44,8 @@ viewModel.PersonalisedPromotions = Personalise(viewModel.Promotions, true);
 viewModel.PersonalisedPromotionsWithoutBackfill = Personalise(viewModel.Promotions);
 viewModel.Pages = Personalise(viewModel.MenuItems, true);
 ```
+
+There is also a Global.cs file that sets the persona to the database upon session end.  
 
 Please reference the controllers in the web project within the solution for an example of this. 
 
